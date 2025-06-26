@@ -1,11 +1,12 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #031927;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #031926;
+    --background_v2: #5F758E;
     --foreground: #ededed;
   }
 }
@@ -22,7 +23,7 @@ body {
 
 .graph-sidebar {
   width: 20%;
-  background-color: #f5f5f5;
+  background-color: var(--background);
   padding: 1rem;
   border-right: 1px solid #ddd;
   box-sizing: border-box;
@@ -32,7 +33,7 @@ body {
   width: 80%;
   padding: 1rem;
   overflow: auto;
-  background-color: #fff;
+  background-color: var(--background_v2);
 }
 
 @media (prefers-color-scheme: dark) {

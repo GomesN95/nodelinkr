@@ -1,11 +1,17 @@
 'use client';
 
-import GraphLayout from '@/components/layout/GraphLayout';
+import { ReactFlowProvider } from 'reactflow';
+import type { ReactNode } from 'react';
 
-export default function GraphPage() {
+import GraphLayout from '@/components/layout/GraphLayout';
+import GraphCanvas from '@/components/ui/GraphCanvas/GraphCanvas';
+
+export default function GraphPage(): ReactNode {
   return (
-    <GraphLayout>
-      <div>Graph ici (à venir)</div>
-    </GraphLayout>
+    <ReactFlowProvider>
+      <GraphLayout>
+        <GraphCanvas />
+      </GraphLayout>
+    </ReactFlowProvider>
   );
 }

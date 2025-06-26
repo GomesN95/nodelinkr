@@ -1,7 +1,9 @@
+import type { ReactNode } from 'react';
 import Sidebar from '../ui/Sidebar';
+
 import '@/styles/globals.scss';
 
-export default function GraphLayout({ children }: { children: React.ReactNode }) {
+export default function GraphLayout({ children }: { children: ReactNode }): ReactNode {
   return (
     <div className="graph-layout">
       <Sidebar />
