@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import type { ReactNode } from 'react';
 import React from 'react';
+import { Theme, ThemePanel } from '@radix-ui/themes';
 
 import '@/styles/globals.scss';
+import '@radix-ui/themes/styles.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -28,7 +30,12 @@ export default function RootLayout({
 }>): ReactNode {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Theme accentColor="cyan" grayColor="sand" panelBackground="solid" radius="large">
+          {children}
+          <ThemePanel />
+        </Theme>
+      </body>
     </html>
   );
 }

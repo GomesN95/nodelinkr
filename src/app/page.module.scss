@@ -1,19 +1,24 @@
-.page {
-  
+.main {
+  height: 100%;
+  width: 100%;
+  padding: 18px;
+
+  .welcomeSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-
 }
 
 @media (hover: hover) and (pointer: fine) {
-
 }
 
 @media (max-width: 600px) {
-
 }
 
 @media (prefers-color-scheme: dark) {
-
 }

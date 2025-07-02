@@ -4,6 +4,8 @@ import type { ReactNode } from 'react';
 import React, { useCallback } from 'react';
 import type { Connection, Edge, Node } from 'reactflow';
 import ReactFlow, { addEdge, Background, Controls, useEdgesState, useNodesState } from 'reactflow';
+import { Button } from '@radix-ui/themes';
+import { PlusIcon } from '@radix-ui/react-icons';
 
 import 'reactflow/dist/style.css';
 import './GraphCanvas.scss';
@@ -40,9 +42,9 @@ export default function GraphCanvas(): ReactNode {
 
   return (
     <div className="graph-wrapper">
-      <button className="add-node-btn" onClick={addNode}>
-        ➕ Ajouter un node
-      </button>
+      <Button onClick={addNode}>
+        <PlusIcon /> Ajouter un node
+      </Button>
       <ReactFlow
         nodes={nodes}
         edges={edges}

@@ -4,15 +4,14 @@ import styles from './page.module.scss';
 
 export default function Home(): ReactNode {
   return (
-    <main style={{ padding: '2rem' }}>
-      <h1>Bienvenue sur Nodelinkr 👋</h1>
-      <p>
-        Visualisez et gérez les connexions entre vos comptes en ligne.
-        <br />
+    <main className={styles.main}>
+      <section className={styles.welcomeSection}>
+        <h1>Welcome to Nodelinkr 👋</h1>
+        <p>Visualisez et gérez les connexions entre vos comptes en ligne.</p>
         <a href="/graph" style={{ color: 'blue', textDecoration: 'underline' }}>
           Démarrer le graphe →
         </a>
-      </p>
+      </section>
     </main>
   );
 }

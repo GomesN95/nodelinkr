@@ -3,13 +3,13 @@
   --foreground: #031927;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #031926;
-    --background_v2: #5F758E;
-    --foreground: #ededed;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background: #031926;
+//     --background_v2: #5F758E;
+//     --foreground: #ededed;
+//   }
+// }
 
 body {
   margin: 0;
@@ -21,14 +21,6 @@ body {
   height: 100vh;
 }
 
-.graph-sidebar {
-  width: 20%;
-  background-color: var(--background);
-  padding: 1rem;
-  border-right: 1px solid #ddd;
-  box-sizing: border-box;
-}
-
 .graph-main {
   width: 80%;
   padding: 1rem;
@@ -36,8 +28,8 @@ body {
   background-color: var(--background_v2);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+// }
