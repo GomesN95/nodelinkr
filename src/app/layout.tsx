@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'NodeLinkr',
   description:
-    'Visualize and manage connections between your entities and the services they’re linked to through an interactive graph.',
+    "Visualize and manage connections between your entities and the services they're linked to through an interactive graph.",
 };
 
 export default function RootLayout({
@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Theme accentColor="cyan" grayColor="sand" panelBackground="solid" radius="large">
           {children}
-          <ThemePanel />
+          {/* <ThemePanel /> */}
         </Theme>
       </body>
     </html>
