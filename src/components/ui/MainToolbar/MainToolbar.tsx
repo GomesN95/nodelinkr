@@ -1,13 +1,8 @@
 import * as React from 'react';
 import { Toolbar } from 'radix-ui';
-import {
-  TextAlignLeftIcon,
-  TextAlignCenterIcon,
-  TextAlignRightIcon,
-  PlusIcon,
-} from '@radix-ui/react-icons';
+import { PlusIcon } from '@radix-ui/react-icons';
 
-import './MainToolbar.scss';
+import './mainToolbar.scss';
 
 function ToolbarDemo(props: { addNode: () => void }): React.ReactNode {
   const [lastExport, _setLastExport] = React.useState<number>(0);

@@ -5,13 +5,11 @@ import React, { useCallback, useEffect } from 'react';
 import type { Connection, Edge, Node } from 'reactflow';
 
 import ReactFlow, { addEdge, Background, Controls, useEdgesState, useNodesState } from 'reactflow';
-import { Button } from '@radix-ui/themes';
-import { PlusIcon } from '@radix-ui/react-icons';
-import { runForceLayout } from '@/app/lib/forceLayout';
+import { runForceLayout } from '@/lib/forceLayout';
+import ToolbarDemo from '../mainToolbar/mainToolbar';
 
 import 'reactflow/dist/style.css';
-import './GraphCanvas.scss';
-import ToolbarDemo from '../MainToolbar/MainToolbar';
+import './graphCanvas.scss';
 
 const initialNodes: Node[] = [];
 const initialEdges: Edge[] = [];

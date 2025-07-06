@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import Sidebar from '../ui/Sidebar/Sidebar';
 
 import '@/styles/globals.scss';
 

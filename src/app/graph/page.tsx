@@ -3,8 +3,8 @@
 import { ReactFlowProvider } from 'reactflow';
 import type { ReactNode } from 'react';
 
-import GraphLayout from '@/components/layout/GraphLayout';
-import GraphCanvas from '@/components/ui/GraphCanvas/GraphCanvas';
+import GraphLayout from '@/components/layout/graphLayout';
+import GraphCanvas from '@/components/ui/graphCanvas/graphCanvas';
 
 export default function GraphPage(): ReactNode {
   return (

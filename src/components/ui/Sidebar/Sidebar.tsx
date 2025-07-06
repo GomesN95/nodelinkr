@@ -1,6 +1,8 @@
+import type { ReactNode } from 'react';
+
 import './Sidebar.scss';
 
-export default function Sidebar() {
+export default function Sidebar(): ReactNode {
   return (
     <aside className="sidebar">
       <div>

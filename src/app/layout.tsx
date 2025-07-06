@@ -4,6 +4,8 @@ import type { ReactNode } from 'react';
 import React from 'react';
 import { Theme, ThemePanel } from '@radix-ui/themes';
 
+import { NodesProvider } from '@/contexts';
+
 import '@/styles/globals.scss';
 import '@radix-ui/themes/styles.css';
 
@@ -31,10 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Theme accentColor="cyan" grayColor="sand" panelBackground="solid" radius="large">
-          {children}
-          {/* <ThemePanel /> */}
-        </Theme>
+        <NodesProvider>
+          <Theme accentColor="cyan" grayColor="sand" panelBackground="solid" radius="large">
+            {children}
+            {/* <ThemePanel /> */}
+          </Theme>
+        </NodesProvider>
       </body>
     </html>
   );
