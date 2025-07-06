@@ -11,6 +11,7 @@ import { runForceLayout } from '@/app/lib/forceLayout';
 
 import 'reactflow/dist/style.css';
 import './GraphCanvas.scss';
+import ToolbarDemo from '../MainToolbar/MainToolbar';
 
 const initialNodes: Node[] = [];
 const initialEdges: Edge[] = [];
@@ -90,9 +91,7 @@ export default function GraphCanvas(): ReactNode {
 
   return (
     <div className="graph-wrapper">
-      <Button onClick={addNode}>
-        <PlusIcon /> Ajouter un node
-      </Button>
+      <ToolbarDemo addNode={addNode} />
       <ReactFlow
         nodes={nodes}
         edges={edges}

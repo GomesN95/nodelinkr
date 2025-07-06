@@ -6,7 +6,7 @@ import '@/styles/globals.scss';
 export default function GraphLayout({ children }: { children: ReactNode }): ReactNode {
   return (
     <div className="graph-layout">
-      <Sidebar />
+      {/* <Sidebar /> */}
       <main className="graph-main">{children}</main>
     </div>
   );

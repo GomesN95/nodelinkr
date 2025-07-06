@@ -35,7 +35,7 @@ const eslintConfig = [
         "warn",
         { blankLine: "always", prev: "import", next: "*" },
         { blankLine: "any", prev: "import", next: "import" },
-        { blankLine: "always", prev: "*", next: "return" }
+        { blankLine: "any", prev: "*", next: "return" }
       ],
       "react/self-closing-comp": "warn",
       "react/jsx-key": "error",
