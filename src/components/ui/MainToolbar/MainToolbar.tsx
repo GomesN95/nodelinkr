@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { Toolbar } from 'radix-ui';
-import { PlusIcon } from '@radix-ui/react-icons';
+import { PlusIcon, Component1Icon } from '@radix-ui/react-icons';
 
 import './mainToolbar.scss';
+import { useEntites } from '@/contexts/nodes.context';
 
-function ToolbarDemo(props: { addNode: () => void }): React.ReactNode {
+function ToolbarDemo(props: { clean: () => void }): React.ReactNode {
+  const uEntites = useEntites();
   const [lastExport, _setLastExport] = React.useState<number>(0);
 
   const displayLastExport = (): string => {
@@ -29,9 +31,21 @@ function ToolbarDemo(props: { addNode: () => void }): React.ReactNode {
           className="ToolbarToggleItem"
           value="bold"
           aria-label="Bold"
-          onClick={props.addNode}
+          onClick={() => {
+            uEntites.addEntity();
+          }}
         >
           <PlusIcon width="18" height="18" />
+        </Toolbar.Button>
+        <Toolbar.Button
+          className="ToolbarToggleItem"
+          value="bold"
+          aria-label="Bold"
+          onClick={() => {
+            props.clean();
+          }}
+        >
+          <Component1Icon width="18" height="18" />
         </Toolbar.Button>
       </Toolbar.ToggleGroup>
       <Toolbar.Separator className="ToolbarSeparator" />

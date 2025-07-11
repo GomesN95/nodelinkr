@@ -1,12 +1,14 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import type { Connection, Edge, Node } from 'reactflow';
-
 import ReactFlow, { addEdge, Background, Controls, useEdgesState, useNodesState } from 'reactflow';
+
 import { runForceLayout } from '@/lib/forceLayout';
 import ToolbarDemo from '../mainToolbar/mainToolbar';
+import { useEntites } from '@/contexts/nodes.context';
+import type { IEntity } from '@/types/node.interface';
 
 import 'reactflow/dist/style.css';
 import './graphCanvas.scss';
@@ -19,27 +21,27 @@ const nodeTypes = {
 };
 
 export default function GraphCanvas(): ReactNode {
+  const uNodes = useEntites();
+
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   useEffect(() => {
-    animateLayout();
-  }, [nodes]);
+    uNodes.entities.forEach((entity) => {
+      addNode(entity);
+    });
+  }, [uNodes.entities]);
 
   const onConnect = useCallback((params: Edge | Connection) => {
     setEdges((eds) => addEdge(params, eds));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const addNode = () => {
-    const id = `${nodes.length + 1}`;
+  const addNode = (entity: IEntity) => {
     const newNode: Node = {
-      id,
-      position: {
-        x: Math.random() * 250,
-        y: Math.random() * 250,
-      },
-      data: { label: `Node ${id}` },
+      id: entity.id.toString(),
+      position: entity.nodeSettings.position,
+      data: { label: entity.label },
       type: 'textUpdater',
     };
     setNodes((nds) => [...nds, newNode]);
@@ -89,7 +91,7 @@ export default function GraphCanvas(): ReactNode {
 
   return (
     <div className="graph-wrapper">
-      <ToolbarDemo addNode={addNode} />
+      <ToolbarDemo clean={animateLayout} />
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -106,15 +108,13 @@ export default function GraphCanvas(): ReactNode {
   );
 }
 
-function RoundedNode() {
-  const onChange = useCallback((evt: any) => {
-    console.log(evt.target.value);
-  }, []);
+function RoundedNode(props: any) {
+  console.log('props: ', props);
 
   return (
-    <div className="rounded-node">
+    <div className="rounded-node" onClick={() => {}}>
       <div>
-        <label htmlFor="text">Text:</label>
+        <label htmlFor="text">{props.data.label}</label>
       </div>
     </div>
   );
