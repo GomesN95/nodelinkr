@@ -1,10 +1,17 @@
 export interface IEntity {
   id: number;
   label: string;
-  nodeSettings: {
-    position: {
-      x: number;
-      y: number;
-    };
-  };
+  tags: ITag[];
+  // nodeSettings: {
+  //   position: {
+  //     x: number;
+  //     y: number;
+  //   };
+  // };
+}
+
+export interface ITag {
+  key: string;
+  label: string;
+  value: string;
 }

@@ -21,43 +21,71 @@ export const NodesProvider = ({ children }: { children: ReactNode }) => {
     _setEntities([
       {
         id: 1,
-        label: 'Steam',
-        nodeSettings: {
-          position: {
-            x: 0,
-            y: 0,
+        label: 'Kraken',
+        tags: [
+          {
+            key: '928370326594286y34',
+            label: 'BTC',
+            value: '250',
           },
-        },
+          {
+            key: '9283703265942324286y34',
+            label: 'DOGE',
+            value: '2500',
+          },
+          {
+            key: '92837743982594286y34',
+            label: 'BNB',
+            value: '200',
+          },
+        ],
       },
       {
         id: 2,
-        label: 'Github',
-        nodeSettings: {
-          position: {
-            x: 0,
-            y: 0,
+        label: 'Binance',
+        tags: [
+          {
+            key: '9892837743982594286y34',
+            label: 'BTC',
+            value: '200',
           },
-        },
+          {
+            key: '928377423463982594286y34',
+            label: 'POL',
+            value: '600',
+          },
+          {
+            key: '9122837743982594286y34',
+            label: 'XRP',
+            value: '1000',
+          },
+        ],
       },
       {
         id: 3,
-        label: 'Kraken',
-        nodeSettings: {
-          position: {
-            x: 0,
-            y: 0,
+        label: 'Ledger',
+        tags: [
+          {
+            key: '92837654743982594286y34',
+            label: 'BTC',
+            value: '1000',
           },
-        },
+          {
+            key: '9283774398452594286y34',
+            label: 'ETH',
+            value: '1000',
+          },
+          {
+            key: '92837741233982594286y34',
+            label: 'SOL',
+            value: '1000',
+          },
+        ],
       },
       {
         id: 4,
-        label: 'Fujifilm',
-        nodeSettings: {
-          position: {
-            x: 0,
-            y: 0,
-          },
-        },
+        label: 'Meria',
+        tags: [],
       },
     ]);
   }, []);
@@ -66,7 +94,10 @@ export const NodesProvider = ({ children }: { children: ReactNode }) => {
     if (newEntity) {
       _setEntities((oldEntities) => [...oldEntities, newEntity]);
     } else {
-      _setEntities((oldEntities) => [...oldEntities, { id: entities.length + 1, label: 'New' }]);
+      _setEntities((oldEntities) => [
+        ...oldEntities,
+        { id: entities.length + 1, label: 'New', tags: [] },
+      ]);
     }
   };
 
